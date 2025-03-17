@@ -1,5 +1,11 @@
 # Change Log
 
+## v1.0.0
+2025-Jan-13
+
+* Re-written to account for new technolgoies and pattern post Meteor 3 release.
+* Tested with AI to help them create.
+
 ### v0.2.1
 2016-Feb-18
 

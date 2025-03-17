@@ -2,14 +2,15 @@
 
 This is a directory layout for the server side part of your app. This is **not** a core part of Mantra, but it follows the directory layout we used for the client side of our app.
 
-On the server side, we have four main directories and a JavaScript file called `main.js`.
+On the server side, we have four main directories and a JavaScript file called `main.ts`.
 
 ```
 * methods
+* resolvers
 * publications
 * libs
 * configs
-* main.js
+* main.ts
 ```
 
 Let's see what each of these directories and files does.
@@ -19,54 +20,44 @@ Let's see what each of these directories and files does.
 This is the directory where we can put methods in your app. This is how the files in this directory look like:
 
 ```
-* posts.js
-* index.js
+* posts.ts
+* index.ts
 * tests
-  - posts.js
+  - posts.ts
 ```
 
-Here we have a file called `posts.js` which has methods for the feature `posts` in our app. Depending your app, we can have different files.
+Here we have a file called `posts.ts` which has methods for the feature `posts` in our app. Depending your app, we can have different files.
 
 Inside this JavaScript file, we have a default export which is a function. Meteor methods are defined inside that function.
 
-When naming methods inside the `posts.js`, always prefix the method name. That prefix is the name of the file with a dot (.).
+When naming methods inside the `posts.ts`, always prefix the method name. That prefix is the name of the file with a dot (.).
 
 In our case, the prefix is `posts.`
 
-For an example, here are some methods inside `posts.js`:
+For an example, here are some methods inside `posts.ts`:
 
-```js
+```ts
 import {Posts, Comments} from '/lib/collections';
 import {Meteor} from 'meteor/meteor';
 import {check} from 'meteor/check';
 
-export default function() {
-  Meteor.methods({
-    'posts.create'(_id, title, content) {
+Meteor.methods({
+    'posts.create'(title: string, content: string) {
+      //  method body
+    },
+    'posts.createComment'(postId: string, text: string) {
       //  method body
     }
-  });
-
-  Meteor.methods({
-    'posts.createComment'(_id, postId, text) {
-      //  method body
-    }
-  });
-}
+});
 ```
 
-Finally, there is a file called `index.js` which imports all other modules in this directory and invokes them in a default export. So, when importing methods, we can do it with a single import.
+Finally, there is a file called `index.ts` which imports all other modules in this directory and invokes them in a default export. So, when importing methods, we can do it with a single import.
 
-Here's a sample `index.js` file:
+Here's a sample `index.ts` file:
 
-```js
-import posts from './posts';
-import admin from './admin';
-
-export default function () {
-  posts();
-  admin();
-}
+```ts
+import './posts';
+import './admin';
 ```
 
 ### Tests
@@ -89,26 +80,29 @@ This is the place where we can write configurations in our app. These configurat
 
 Here's an example configuration:
 
-```js
+```ts
 export default function() {
   //  invoke the configuration here
 }
 ```
 
-## main.js
+## main.ts
 
 This is the place where we can start as the entry point for our app. We'll import methods, publications and configuration inside this file and invoke.
 
-Here's an example `main.js` file:
+Here's an example `main.ts` file:
 
-```js
-import publications from './publications';
-import methods from './methods';
-import addInitialData from './configs/initial_adds.js';
+```ts
+import './publications';
+import './methods';
+import './configs/apollo';
+import addInitialData from './configs/initial_adds';
 
-publications();
-methods();
 addInitialData();
 ```
 
-NOTE: Have a look at this [sample app](https://github.com/mantrajs/mantra-sample-blog-app/tree/master/server) to see how it has implemented these guidelines.
+> NOTE: Have a look at this [sample app](https://github.com/mantrajs/mantra-sample-blog-app/tree/master/server) to see how it has implemented these guidelines.
+
+## resolvers
+
+Folder to maintain all the resolvers for GraphQL implementation if you use it.

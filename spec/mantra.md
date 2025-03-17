@@ -1,17 +1,18 @@
 Mantra
 -------
 
-*Working Draft - [Version 0.2.0](https://github.com/kadirahq/mantra/blob/master/CHANGELOG.md)*
+*Working Draft - [Version 0.2.0](https://github.com/storytellercz/mantra/blob/master/CHANGELOG.md)*
 
 **Introduction**
 
-This is a Draft Specification for Mantra, an application architecture for Meteor created by [Kadira](https://kadira.io/). It helps developers build maintainable, future-proof Meteor apps.
+This is a Draft Specification for Mantra, an application architecture for Meteor created by [Kadira](https://kadira.io/) and now maintained by [Jan Dvorak](https://www.github.com/sponsors/StorytellerCZ). It helps developers build maintainable, future-proof Meteor apps.
 
 **Copyright notice**
 
 The MIT License (MIT)
 
 Copyright (c) 2016 Kadira Inc. <hello@kadira.io>
+Copyright (c) 2025 Jan Dvorak <hello@jandvorak.me>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

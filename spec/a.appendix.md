@@ -2,7 +2,7 @@
 
 These resources will help you understand Mantra very clearly.
 
-## ES2015
+## ES2024
 
 ES2015 is the standard version of JavaScript for 2015. It's not fully implemented by all browsers or server-side environments. But, using transpilers like [babel](https://babeljs.io/), we can use E2015 today.
 
@@ -10,7 +10,13 @@ Note: Meteor has built-in support for ES2015
 
 ES2015 is the best thing happen to JavaScript. It introduces a lot of features and fixes a lot of common issues.
 
-* [Learn ES2015: Say Hello to ES2015](https://tutor.mantrajs.com/say-hello-to-ES2015/introduction)
+* [ES2024 specification](https://tc39.es/ecma262/2024/)
+
+## TypeScript
+
+TypeScript is a strongly typed programming language that builds on JavaScript, giving you better tooling at any scale. In essence it gives you types into JavaScript. By default Meteor is not strict which allows you to easily merge JS and TS codebases and by lenient with libraries that don't have TS typings.
+
+* [TypeScript Documentation](https://www.typescriptlang.org/docs/)
 
 ## React
 
@@ -18,17 +24,19 @@ React is a UI framework based on JavaScript. Basically, you create the UI inside
 
 Just forget about what you already know about HTML for a moment, and learn React. Then rethink. Here are some resources:
 
-* [Official Tutorial](https://facebook.github.io/react/docs/tutorial.html)
-* [Getting Started Tutorial at Scotch.io](https://scotch.io/tutorials/learning-react-getting-started-and-concepts)
-* [React Components, Elements, and Instances](https://medium.com/@dan_abramov/react-components-elements-and-instances-90800811f8ca)
+* [Official website](https://react.dev/)
+
+## Solic
+
+Solid is a UI framework using JSX like React, but has some specific elements which merge better with Meteor patterns.
+
+- [Official website](https://www.solidjs.com/)
 
 ## React Containers
 
-Now, we rarely use states in React components. Instead, we accept data via props. React's [stateless components](https://medium.com/@joshblack/stateless-components-in-react-0-14-f9798f8b992d) make it very easy.
+Historically in the olden days of Mantra [react-komposer](https://github.com/kadirahq/react-komposer) was used to compose React components together and separate data and display layers.
 
-Then, we compose React containers to fetch data from different sources and load them into UI components. Projects like [react-komposer](https://github.com/kadirahq/react-komposer) make it simple. Check out the following article for more information:
-
-* [Let’s Compose Some React Containers](https://voice.kadira.io/let-s-compose-some-react-containers-3b91b6d9b7c8#.my9ynz9e2)
+Today we use functional components that are separated between the display and data layers to allow for easier testing.
 
 ## Meteor Basics
 
